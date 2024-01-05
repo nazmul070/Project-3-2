@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/631c6bc95b.js" crossorigin="anonymous"></script>
+    <title>Sign in and sign up page</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>BSMRSTU Sheikh Rasel Hall</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#" class="link active">Sign In</a></li>
+                    <li><a href="about.html" class="link">About</a></li>
+                </ul>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="fa-solid fa-bars" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+
+        <!-- Form box -->
+        <div class="form-box">
+            <!-- Choose option -->
+            <div class="choose-container" id="choose">
+                <div class="top">
+                    <header>Choose an option</header>
+                    <div class="ch-button">
+                        <button class="btn white-btn" id="loginBtn2" onclick="login2()"><p style="color:lightgreen">Sign in as a student</p></button>
+                    </div>
+                    <div class="ch-button">
+                        <button class="btn white-btn" id="loginBtn1" onclick="login1()"><p style="color:lightgreen">Sign in as a superindent</p></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Login form 1 -->
+            <div class="login-container-1" id="login1">
+                <div class="top">
+                    <span>Don't have an account? <a href="#" onclick="register1()">Sign Up</a></span>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Passward">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="login-check">
+                        <label for="login-check"> Remember Me </label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#">Forgot passward?</a></label>
+                    </div>
+                </div>
+                <div class="inputs-box">
+                    <input type="submit" class="submit" value="Sign In">
+                </div>
+                <div class="inputs-box">
+                    <input type="submit" class="submit" value="Go back" onclick="choose()">
+                </div>
+                
+            </div>
+
+
+            <!-- Registration form 1 -->
+            <div class="register-container-1" id="register1">
+                <div class="top">
+                    <span>Have an account? <a href="#" onclick="login1()">Login</a></span>
+                </div>
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Firstname">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Lastname">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Passward">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="register-check">
+                        <label for="register-check"> Remember Me </label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#">Terms & conditions</a></label>
+                    </div>
+                </div>
+                <div class="inputs-box">
+                    <input type="submit" class="submit" value="Register">
+                </div>
+                <div class="inputs-box">
+                    <input type="submit" class="submit" value="Go back" onclick="login1()">
+                </div>
+            </div>
+
+            <!-- Login form 2 -->
+            <div class="login-container-2" id="login2">
+                <div class="top">
+                    <span>Don't have an account? meet a superintendent.</span>
+                </div>
+                <div class="top">
+                    <!-- -->
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Student Id">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Passward">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="login-check">
+                        <label for="login-check"> Remember Me </label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#">Forgot passward?</a></label>
+                    </div>
+                </div>
+                <div class="inputs-box">
+                    <input type="submit" class="submit" value="Sign In">
+                </div>
+                <div class="inputs-box">
+                    <input type="submit" class="submit" value="Go back" onclick="choose()">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let a = document.getElementById("choose");
+        let x1 = document.getElementById("login1");
+        let y1 = document.getElementById("register1");
+        let x2 = document.getElementById("login2");
+    
+        function choose(){
+            a.style.right = "-100px";
+            x1.style.right = "-500px";
+            x2.style.right = "-500px";
+        }
+
+        function login1(){
+            a.style.right = "500px";
+            x1.style.right = "-0px";
+            y1.style.right = "-520px";
+        }
+    
+        function register1(){
+            x1.style.right = "600px";
+            y1.style.right = "-0px";
+        }
+
+        function login2(){
+            a.style.right = "500px";
+            x2.style.right = "-0px";
+        }
+    
+        function myMenuFunction() {
+            var i = document.getElementById("navMenu");
+    
+            if(i.className === "nav-menu"){
+                i.className += " responsive";
+            }
+            else {
+                i.className = "nav-menu"
+            }
+        }
+    
+    </script>
+</body>
+</html>
